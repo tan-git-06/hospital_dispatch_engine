@@ -1,0 +1,24 @@
+{
+  "name": "hospital-dispatch-engine",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "db:mysql": "node --env-file=.env.local scripts/setup-db.mjs mysql",
+    "db:mongo": "node --env-file=.env.local scripts/setup-db.mjs mongo",
+    "db:test": "node --env-file=.env.local scripts/setup-db.mjs test",
+    "seed:users": "node --env-file=.env.local scripts/seed-users.mjs",
+    "db:setup": "npm run db:mysql && npm run seed:users && npm run db:mongo"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jose": "^5.9.6",
+    "mongodb": "^6.10.0",
+    "mysql2": "^3.11.4",
+    "next": "^16.4.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
